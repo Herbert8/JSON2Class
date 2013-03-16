@@ -1,0 +1,10 @@
+{
+    "intValue": "@property (nonatomic, assign) int %DATA_NAME%;",
+    "floatValue": "@property (nonatomic, assign) float %DATA_NAME%;",
+    "stringValue": "@property (nonatomic, copy) NSString *%DATA_NAME%;",
+    "boolValue": "@property (nonatomic, assign) BOOL %DATA_NAME%;",
+    "objectValue": "@property (nonatomic, retain) WB%DATA_NAME%VO *%DATA_NAME%;",
+    "arrayValue": "@property (nonatomic, retain) NSArray *%DATA_NAME%;",
+    "className": "WB%DATA_NAME%VO",
+    "releaseCode": "    [_%RELEASE_NAME% release];"
+}

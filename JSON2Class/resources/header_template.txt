@@ -1,0 +1,12 @@
+
+
+#import "PersistentObject.h"
+
+
+%CLASS_LIST%
+
+@interface %CLASS_NAME% : PersistentObject
+
+%PROPERTY_LIST%
+
+@end

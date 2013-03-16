@@ -1,0 +1,12 @@
+
+
+#import "%CLASS_NAME%.h"
+
+
+@implementation %CLASS_NAME%
+
+- (void)dealloc {%RELEASE_LIST%
+    [super dealloc];
+}
+
+@end
