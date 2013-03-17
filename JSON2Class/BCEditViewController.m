@@ -200,6 +200,7 @@
         //字符串类型
         if ([obj isKindOfClass:[NSString class]]) {
             propertyTemplateStr = [codeTemplateDict valueForKey:KEY_STRING_VALUE];
+            [releaseList addObject:sKey];
         }
         //对象类型
         if ([obj isKindOfClass:[NSDictionary class]]) {
