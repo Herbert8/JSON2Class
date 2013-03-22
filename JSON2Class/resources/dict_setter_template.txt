@@ -1,0 +1,7 @@
+
+
+- (void)set%CAPITALIZED_FIELD_NAME%:(NSDictionary *)a_%FIELD_NAME%_dict_data
+{
+    self.%FIELD_NAME%VO = [WB%CAPITALIZED_FIELD_NAME%VO initWithDictionary:a_%FIELD_NAME%_dict_data];
+}
+

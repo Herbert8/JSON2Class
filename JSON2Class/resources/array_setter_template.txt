@@ -1,0 +1,7 @@
+
+
+- (void)set%CAPITALIZED_FIELD_NAME%:(NSArray *)a_%FIELD_NAME%_array_data
+{
+    self.%FIELD_NAME%VOArray = [WB%CAPITALIZED_FIELD_NAME%VO initWithArray:a_%FIELD_NAME%_array_data];
+}
+

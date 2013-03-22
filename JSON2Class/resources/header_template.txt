@@ -5,7 +5,7 @@
 
 %CLASS_LIST%
 
-@interface %CLASS_NAME% : PersistentObject
+@interface %CLASS_NAME_PREFIX%%CAPITALIZED_FIELD_NAME%%CLASS_NAME_POSTFIX% : PersistentObject
 
 %PROPERTY_LIST%
 

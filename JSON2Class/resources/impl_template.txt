@@ -1,9 +1,13 @@
 
 
-#import "%CLASS_NAME%.h"
+#import "%CLASS_NAME_PREFIX%%CAPITALIZED_FIELD_NAME%%CLASS_NAME_POSTFIX%.h"
+%IMPORT_LIST%
+
+@implementation %CLASS_NAME_PREFIX%%CAPITALIZED_FIELD_NAME%%CLASS_NAME_POSTFIX%
 
 
-@implementation %CLASS_NAME%
+%SETTER_LIST%
+
 
 - (void)dealloc {%RELEASE_LIST%
     [super dealloc];

@@ -1,10 +1,16 @@
 {
-    "intValue": "@property (nonatomic, assign) int %DATA_NAME%;",
-    "floatValue": "@property (nonatomic, assign) float %DATA_NAME%;",
-    "stringValue": "@property (nonatomic, copy) NSString *%DATA_NAME%;",
-    "boolValue": "@property (nonatomic, assign) BOOL %DATA_NAME%;",
-    "objectValue": "@property (nonatomic, retain) WB%DATA_NAME%VO *%DATA_NAME%;",
-    "arrayValue": "@property (nonatomic, retain) NSArray *%DATA_NAME%;",
-    "className": "WB%DATA_NAME%VO",
-    "releaseCode": "    [_%RELEASE_NAME% release];"
+    "KEY_INT_TEMPLATE": "@property (nonatomic, assign) int %FIELD_NAME%;",
+    "KEY_FLOAT_TEMPLATE": "@property (nonatomic, assign) float %FIELD_NAME%;",
+    "KEY_STRING_TEMPLATE": "@property (nonatomic, copy) NSString *%FIELD_NAME%;",
+    "KEY_BOOL_TEMPLATE": "@property (nonatomic, assign) BOOL %FIELD_NAME%;",
+    "KEY_OBJECT_TEMPLATE": "@property (nonatomic, assign) NSDictionary *%FIELD_NAME%;\n@property (nonatomic, retain) %CLASS_NAME_PREFIX%%CAPITALIZED_FIELD_NAME%%CLASS_NAME_POSTFIX% *%FIELD_NAME%%CLASS_NAME_POSTFIX%;",
+    "KEY_ARRAY_TEMPLATE": "@property (nonatomic, retain) NSArray *%FIELD_NAME%;",
+    "KEY_OBJECT_ARRAY_TEMPLATE": "@property (nonatomic, assign) NSArray *%FIELD_NAME%;\n@property (nonatomic, retain) NSArray *%FIELD_NAME%%CLASS_NAME_POSTFIX%Array;",
+    
+    "KEY_CLASS_NAME": "%CLASS_NAME_PREFIX%%CAPITALIZED_FIELD_NAME%%CLASS_NAME_POSTFIX%",
+    "KEY_OBJECT_VO_NAME": "%FIELD_NAME%%CLASS_NAME_POSTFIX%",
+    "KEY_RELEASE_CODE_TEMPLATE": "    [_%RELEASE_NAME% release];",
+    "KEY_CLASS_NAME_PREFIX": "WB",
+    "KEY_CLASS_NAME_POSTFIX": "VO",
+    "KEY_OBJECT_ARRAY_NAME": "%FIELD_NAME%%CLASS_NAME_POSTFIX%Array",
 }

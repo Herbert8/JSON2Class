@@ -12,6 +12,10 @@
 		04BF4BB216F2B0740059A985 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BF4BB116F2B0740059A985 /* main.m */; };
 		04BF4BB616F2B0740059A985 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 04BF4BB416F2B0740059A985 /* Credits.rtf */; };
 		04BF4BB916F2B0740059A985 /* BCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BF4BB816F2B0740059A985 /* BCAppDelegate.m */; };
+		04C755DF16FA1BAE00AA706D /* BCJSON2ClassConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C755DE16FA1BAD00AA706D /* BCJSON2ClassConverter.m */; };
+		04C755E216FA218700AA706D /* BCConfigReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C755E116FA218700AA706D /* BCConfigReader.m */; };
+		04C755E416FA22B800AA706D /* array_setter_template.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C755E316FA22B700AA706D /* array_setter_template.txt */; };
+		04DE611316F9B2AE0065DB44 /* dict_setter_template.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04DE611216F9B2AE0065DB44 /* dict_setter_template.txt */; };
 		04E2747A16F51049006ACEF8 /* BCEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E2747C16F51049006ACEF8 /* BCEditViewController.xib */; };
 		04E2747D16F51066006ACEF8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E2747F16F51066006ACEF8 /* MainMenu.xib */; };
 		04E71CA816F2B91000B202B7 /* BCEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E71CA716F2B91000B202B7 /* BCEditViewController.m */; };
@@ -34,8 +38,14 @@
 		04BF4BB516F2B0740059A985 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		04BF4BB716F2B0740059A985 /* BCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCAppDelegate.h; sourceTree = "<group>"; };
 		04BF4BB816F2B0740059A985 /* BCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCAppDelegate.m; sourceTree = "<group>"; };
-		04E2748016F51085006ACEF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/BCEditViewController.xib; sourceTree = "<group>"; };
-		04E2748116F51085006ACEF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		04C755DD16FA1BAD00AA706D /* BCJSON2ClassConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCJSON2ClassConverter.h; sourceTree = "<group>"; };
+		04C755DE16FA1BAD00AA706D /* BCJSON2ClassConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCJSON2ClassConverter.m; sourceTree = "<group>"; };
+		04C755E016FA218700AA706D /* BCConfigReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCConfigReader.h; sourceTree = "<group>"; };
+		04C755E116FA218700AA706D /* BCConfigReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCConfigReader.m; sourceTree = "<group>"; };
+		04C755E316FA22B700AA706D /* array_setter_template.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = array_setter_template.txt; path = resources/array_setter_template.txt; sourceTree = "<group>"; };
+		04DE611216F9B2AE0065DB44 /* dict_setter_template.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict_setter_template.txt; path = resources/dict_setter_template.txt; sourceTree = "<group>"; };
+		04E2748016F51085006ACEF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BCEditViewController.xib; sourceTree = "<group>"; };
+		04E2748116F51085006ACEF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		04E2748416F5109A006ACEF8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		04E2748516F5109A006ACEF8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		04E2748716F510C3006ACEF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BCEditViewController.strings; sourceTree = "<group>"; };
@@ -106,6 +116,10 @@
 				04BF4BB816F2B0740059A985 /* BCAppDelegate.m */,
 				04E71CA616F2B91000B202B7 /* BCEditViewController.h */,
 				04E71CA716F2B91000B202B7 /* BCEditViewController.m */,
+				04C755E016FA218700AA706D /* BCConfigReader.h */,
+				04C755E116FA218700AA706D /* BCConfigReader.m */,
+				04C755DD16FA1BAD00AA706D /* BCJSON2ClassConverter.h */,
+				04C755DE16FA1BAD00AA706D /* BCJSON2ClassConverter.m */,
 				04E2747C16F51049006ACEF8 /* BCEditViewController.xib */,
 				04E2747F16F51066006ACEF8 /* MainMenu.xib */,
 				04BF4BAC16F2B0740059A985 /* Supporting Files */,
@@ -131,6 +145,8 @@
 			children = (
 				04E71CAB16F3799D00B202B7 /* header_template.txt */,
 				04E71CAE16F37A2700B202B7 /* impl_template.txt */,
+				04DE611216F9B2AE0065DB44 /* dict_setter_template.txt */,
+				04C755E316FA22B700AA706D /* array_setter_template.txt */,
 				04E71CB216F37DF500B202B7 /* code_template.json */,
 			);
 			name = resources;
@@ -198,6 +214,8 @@
 				04E71CB316F37DF500B202B7 /* code_template.json in Resources */,
 				04E2747D16F51066006ACEF8 /* MainMenu.xib in Resources */,
 				04E71CE416F460C600B202B7 /* scheme_Icon.icns in Resources */,
+				04DE611316F9B2AE0065DB44 /* dict_setter_template.txt in Resources */,
+				04C755E416FA22B800AA706D /* array_setter_template.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +229,8 @@
 				04BF4BB216F2B0740059A985 /* main.m in Sources */,
 				04BF4BB916F2B0740059A985 /* BCAppDelegate.m in Sources */,
 				04E71CA816F2B91000B202B7 /* BCEditViewController.m in Sources */,
+				04C755DF16FA1BAE00AA706D /* BCJSON2ClassConverter.m in Sources */,
+				04C755E216FA218700AA706D /* BCConfigReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
