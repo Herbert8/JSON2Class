@@ -34,6 +34,9 @@
 - (NSString *)classNameByFieldName:(NSString *)fieldName;
 - (NSString *)valueObjectNameByFieldName:(NSString *)fieldName;
 - (NSString *)valueObjectArrayNameByFieldName:(NSString *)fieldName;
-- (NSString *)commonReplace:(NSString *)str withFieldName:(NSString *)fieldName;
+- (NSString *)valueObjectItemInArrayFieldNameByFieldName:(NSString *)fieldName;
 
+- (NSString *)commonReplace:(NSString *)str withFieldName:(NSString *)fieldName;
+- (NSString *)commonReplace:(NSString *)str
+   withOwnerObjectFieldName:(NSString *)ownerObjectFieldName;
 @end

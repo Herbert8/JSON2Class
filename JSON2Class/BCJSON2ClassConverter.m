@@ -160,7 +160,10 @@
             propertyTemplateStr = cfgReader.objectPropertyTemplate;
             classListStr = [classListStr stringByAppendingFormat:@"\n@class %@;",
                             [cfgReader classNameByFieldName:tmpFieldName]];
+            
+            //如果是字典对象，则重新包装，放到列表中做后续处理
             FieldItem *newFieldItem = [FieldItem new];
+            //为避免名称重复，采用 本Dict属性所属对象名+本Dict对应属性名 方式命名
             newFieldItem.fieldName = [NSString stringWithFormat:@"%@_%@",
                                       fieldItem.fieldName, tmpFieldName];
             newFieldItem.fieldValue = obj;
@@ -168,22 +171,17 @@
             //setter
             NSString *tmpSetter = [cfgReader commonReplace:cfgReader.dictionarySetterTemplate
                                              withFieldName:tmpFieldName];
-
+            tmpSetter = [cfgReader commonReplace:tmpSetter
+                        withOwnerObjectFieldName:fieldItem.fieldName];
             setterListStr = [setterListStr stringByAppendingString:tmpSetter];
             
             // import
             importListStr = [importListStr stringByAppendingFormat:@"\n#import \"%@.h\"",
-                             [cfgReader classNameByFieldName:tmpFieldName]];
+                             [cfgReader classNameByFieldName:newFieldItem.fieldName]];
             
-//            NSString *newFieldName = [NSString stringWithFormat:@"%@_%@", newFieldItem.fieldName, tmpFieldName];
-//            int tmpIdx = 0;
-//            NSString *tmpName = newFieldName;
-//            while ([fieldList valueForKey:tmpName]) {
-//                tmpName = [newFieldName stringByAppendingFormat:@"_%d", tmpIdx];
-//            }
-//            newFieldItem.fieldName = tmpName;
+
             [fieldList addObject:newFieldItem];
-            [releaseList addObject:[cfgReader valueObjectNameByFieldName:newFieldItem.fieldName]];
+            [releaseList addObject:[cfgReader valueObjectNameByFieldName:tmpFieldName]];
         }
         //数组类型
         if ([obj isKindOfClass:[NSArray class]]) {
@@ -194,16 +192,23 @@
                 
                 propertyTemplateStr = cfgReader.objectArrayPropertyTemplate;
                 FieldItem *newFieldItem = [FieldItem new];
-                newFieldItem.fieldName = [tmpFieldName stringByAppendingString:@"_item_0_"];
-                newFieldItem.fieldName = [NSString stringWithFormat:@"%@_%@_item_0_",
-                                          fieldItem.fieldName, tmpFieldName];
+
+                newFieldItem.fieldName = [cfgReader valueObjectItemInArrayFieldNameByFieldName:
+                                          [NSString stringWithFormat:@"%@_%@",
+                                           fieldItem.fieldName,
+                                           tmpFieldName]];
                 newFieldItem.fieldValue = [tmpArray objectAtIndex:0];
+                
+                // import
+                importListStr = [importListStr stringByAppendingFormat:@"\n#import \"%@.h\"",
+                                 [cfgReader classNameByFieldName:newFieldItem.fieldName]];
                 [fieldList addObject:newFieldItem];
                 
                 //setter
                 NSString *tmpSetter = [cfgReader commonReplace:cfgReader.arraySetterTemplate
                                                  withFieldName:tmpFieldName];
-                
+                tmpSetter = [cfgReader commonReplace:tmpSetter
+                            withOwnerObjectFieldName:fieldItem.fieldName];
                 setterListStr = [setterListStr stringByAppendingString:tmpSetter];
                 
                 [releaseList addObject:[cfgReader valueObjectArrayNameByFieldName:tmpFieldName]];
@@ -222,7 +227,6 @@
         propertyListStr = [propertyListStr stringByAppendingFormat:@"\n%@", propertyStr];
         
     }
-    NSLog(@"%@", propertyListStr);
     
     
     //替换类声明列表部分

@@ -46,7 +46,6 @@
                 break;
                 
             case NSFileHandlingPanelCancelButton:
-                NSLog(@"cancel");
                 break;
                 
             default:

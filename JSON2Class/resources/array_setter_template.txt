@@ -2,6 +2,6 @@
 
 - (void)set%CAPITALIZED_FIELD_NAME%:(NSArray *)a_%FIELD_NAME%_array_data
 {
-    self.%FIELD_NAME%VOArray = [WB%CAPITALIZED_FIELD_NAME%VO initWithArray:a_%FIELD_NAME%_array_data];
+    self.%FIELD_NAME%VOArray = [WB%PLACE_HOLDER_CAPITALIZED_OWNER_OBJECT_FIELD_NAME%_%FIELD_NAME%_item_0_VO initWithArray:a_%FIELD_NAME%_array_data];
 }
 

@@ -2,6 +2,6 @@
 
 - (void)set%CAPITALIZED_FIELD_NAME%:(NSDictionary *)a_%FIELD_NAME%_dict_data
 {
-    self.%FIELD_NAME%VO = [WB%CAPITALIZED_FIELD_NAME%VO initWithDictionary:a_%FIELD_NAME%_dict_data];
+    self.%FIELD_NAME%VO = [WB%PLACE_HOLDER_CAPITALIZED_OWNER_OBJECT_FIELD_NAME%_%FIELD_NAME%VO initWithDictionary:a_%FIELD_NAME%_dict_data];
 }
 

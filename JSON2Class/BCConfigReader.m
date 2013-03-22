@@ -32,12 +32,15 @@
 #define KEY_CLASS_NAME_PREFIX @"KEY_CLASS_NAME_PREFIX"
 #define KEY_CLASS_NAME_POSTFIX @"KEY_CLASS_NAME_POSTFIX"
 #define KEY_OBJECT_ARRAY_NAME @"KEY_OBJECT_ARRAY_NAME"
+#define KEY_OBJECT_IN_ARRAY_FIELD_NAME @"KEY_OBJECT_IN_ARRAY_FIELD_NAME"
 
 #define PLACE_HOLDER_FIELD_NAME @"%FIELD_NAME%"
 #define PLACE_HOLDER_CAPITALIZED_FIELD_NAME @"%CAPITALIZED_FIELD_NAME%"
 #define PLACE_HOLDER_CLASS_NAME_PREFIX @"%CLASS_NAME_PREFIX%"
 #define PLACE_HOLDER_CLASS_NAME_POSTFIX @"%CLASS_NAME_POSTFIX%"
-#define PLACE_HOLDER_CLASS_NAME @"%CLASS_NAME%"
+//#define PLACE_HOLDER_CLASS_NAME @"%CLASS_NAME%"
+#define PLACE_HOLDER_OWNER_OBJECT_FIELD_NAME @"%PLACE_HOLDER_OWNER_OBJECT_FIELD_NAME%"
+#define PLACE_HOLDER_CAPITALIZED_OWNER_OBJECT_FIELD_NAME @"%PLACE_HOLDER_CAPITALIZED_OWNER_OBJECT_FIELD_NAME%"
 
 #define GetResPath(name, type) [[NSBundle mainBundle] \
                                 pathForResource:name \
@@ -180,6 +183,19 @@
     return str;
 }
 
+- (NSString *)commonReplace:(NSString *)str
+   withOwnerObjectFieldName:(NSString *)ownerObjectFieldName
+{
+
+    str = GetReplacedStr(str, PLACE_HOLDER_OWNER_OBJECT_FIELD_NAME,
+                         ownerObjectFieldName);
+    str = GetReplacedStr(str, PLACE_HOLDER_CAPITALIZED_OWNER_OBJECT_FIELD_NAME,
+                         [self capitalizedFieldName:ownerObjectFieldName]);
+    return str;
+}
+
+
+
 - (NSString *)valueObjectNameByFieldName:(NSString *)fieldName
 {
     NSString *ret = codeTemplateDict[KEY_OBJECT_VO_NAME];
@@ -197,6 +213,17 @@
     
     return ret;
 }
+
+- (NSString *)valueObjectItemInArrayFieldNameByFieldName:(NSString *)fieldName
+{
+    NSString *ret = codeTemplateDict[KEY_OBJECT_IN_ARRAY_FIELD_NAME];
+    
+    ret = [self commonReplace:ret withFieldName:fieldName];
+    
+    return ret;
+}
+
+
 
 
 
