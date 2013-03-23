@@ -10,13 +10,14 @@
 #import "BCJSON2ClassConverter.h"
 
 
-@interface BCEditViewController () <NSTextDelegate, NSTextViewDelegate> {
-    BCJSON2ClassConverter *converter;
-}
-
+@interface BCEditViewController () <NSTextDelegate, NSTextViewDelegate>
 @end
 
 @implementation BCEditViewController
+{
+    BCJSON2ClassConverter *converter;
+}
+
 
 
 

@@ -8,13 +8,13 @@
 
 #import "BCConfigReader.h"
 
-@interface BCConfigReader () {
+
+@implementation BCConfigReader
+{
     NSDictionary *codeTemplateDict;
 }
 
-@end
 
-@implementation BCConfigReader
 
 #define KEY_INT_TEMPLATE @"KEY_INT_TEMPLATE"
 #define KEY_FLOAT_TEMPLATE @"KEY_FLOAT_TEMPLATE"

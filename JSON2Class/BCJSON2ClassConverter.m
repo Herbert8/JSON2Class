@@ -20,17 +20,15 @@
 
 @end
 
-@interface BCJSON2ClassConverter () {
+
+
+@implementation BCJSON2ClassConverter
+{
     
     BCConfigReader *cfgReader;
     
     NSMutableArray *fieldList;
 }
-
-@end
-
-@implementation BCJSON2ClassConverter
-
 
 
 
